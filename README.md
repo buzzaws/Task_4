@@ -35,9 +35,13 @@ Install all necessary plugin like(Git server , Docker & Docker pipeline , Pipeli
 
 
 iii)  Set up a Jenkins pipeline to:
+
 • Pull the latest code from GitHub.
+
 • Build a new Docker image.
+
 • Push the image to Docker Hub or AWS ECR.
+
 • Deploy the updated container on the EC2 instance.
 
 
