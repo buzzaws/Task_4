@@ -1,15 +1,15 @@
 pipeline {
     agent any
-stages {
+    stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/username/sample-project.git'
+                git 'https://github.com/buzzaws/Task_4.git'
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("username/sample-app:latest")
+                    dockerImage = docker.build("buzzeraws/sample-flaskapp:latest")
                 }
             }
         }
@@ -22,10 +22,20 @@ stages {
                 }
             }
         }
-        stage('Deploy to Kubernetes') {
+        stage('Deploy to Container') {
             steps {
-                kubernetesDeploy configs: 'deployment.yaml', kubeconfigId: 'kubeconfig-id'
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
+                        dockerImage.run('-d --name sample-flaskapp')
+                    }
+                }
             }
         }
     }
+    post {
+        failure {
+            echo 'Pipeline failed. Not deploying to container.'
+        }
+    }
 }
+
