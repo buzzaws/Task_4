@@ -50,6 +50,14 @@ iii)  Set up a Jenkins pipeline to:
 *** check the jenkinsfile for the above steps 
 
 
+iv) Test the pipeline by making changes to the application and triggering an automated deployment.
+
+<img width="1200" alt="Screenshot 2025-02-28 at 2 05 34 PM" src="https://github.com/user-attachments/assets/1cbe3bae-49e0-4949-987c-c236aa61355a" />
+
+
+<img width="1200" alt="Screenshot 2025-02-28 at 1 27 44 PM" src="https://github.com/user-attachments/assets/aa02f4c9-1c0f-4192-9c7a-3c129ebf2011" />
+
+
 
 
 
