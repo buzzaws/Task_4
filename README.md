@@ -4,7 +4,7 @@
 STEPS: 
 i) Install and configure Jenkins on the EC2 instance.
 
-command to install jenkins
+#### command to install jenkins
 sudo apt update
 
 sudo apt install fontconfig openjdk-17-jre
@@ -24,3 +24,29 @@ sudo apt-get install jenkins
 
 
 ii)Install necessary plugins (Git, Pipeline, Docker)
+
+Access the jenkins via ip-address:8080
+
+go to Manage jenkins
+
+go to the plugin section
+
+Install all necessary plugin like(Git server , Docker & Docker pipeline , Pipeline)
+
+
+iii)  Set up a Jenkins pipeline to:
+• Pull the latest code from GitHub.
+• Build a new Docker image.
+• Push the image to Docker Hub or AWS ECR.
+• Deploy the updated container on the EC2 instance.
+
+
+### Create Jenkinfile  for above steps
+
+#### check the jenkinsfile for the above steps 
+
+
+
+
+
+
