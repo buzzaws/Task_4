@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
-                        dockerImage.run(' -d --name sample-flaskapp:latest')
+                        dockerImage.run('-d --name sample-flaskapp')
                     }
                 }
             }
@@ -38,4 +38,3 @@ pipeline {
         }
     }
 }
-
