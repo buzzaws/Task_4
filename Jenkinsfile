@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
-                        dockerImage.run('--name sample-flaskapp')
+                        dockerImage.run('-p 8000:8000 --name sample-flaskapp')
                     }
                 }
             }
