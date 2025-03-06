@@ -9,7 +9,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("buzzeraws/sample-flaskapp1:latest")
+                    dockerImage = docker.build("buzzeraws/sample-flaskapp:latest")
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
-                        dockerImage.run('-d --name sample-flaskapp1
+                        dockerImage.run('-d --name sample-flaskapp
                                         ')
                     }
                 }
